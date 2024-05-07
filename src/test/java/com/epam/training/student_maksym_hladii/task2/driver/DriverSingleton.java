@@ -1,10 +1,6 @@
 package com.epam.training.student_maksym_hladii.task2.driver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverSingleton {
 
@@ -13,30 +9,19 @@ public class DriverSingleton {
     private DriverSingleton() {
     }
 
-    public static WebDriver getDriver() {
+    public static WebDriver getDriver(WebDrivers webDriverIdentifier) {
         if (driver == null) {
-            switch (System.getProperty("browser")) {
-                case "edge" -> {
-                    WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver();
-                }
-                case "firefox" -> {
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                }
-                default -> {
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-                }
-            }
+            driver = DriverFactory.getDriver(webDriverIdentifier);
             driver.manage().window().maximize();
         }
         return driver;
     }
 
     public static void quitDriver() {
-        driver.quit();
-        driver = null;
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
     }
 
 }
