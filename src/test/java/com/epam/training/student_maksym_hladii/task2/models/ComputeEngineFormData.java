@@ -4,131 +4,159 @@ import java.util.Objects;
 
 public class ComputeEngineFormData {
 
-    private String numberOfInstances;
-    private String whatAreTheseInstancesFor;
-    private String operatingSystem;
-    private String provisioningModel;
-    private String machineFamily;
-    private String series;
-    private String machineType;
-    private String GPUType;
-    private String numberOfGPUs;
-    private String localSSD;
-    private String datacenterLocation;
-    private String committedUsage;
+    private final String numberOfInstances;
+    private final String whatAreTheseInstancesFor;
+    private final String operatingSystem;
+    private final String provisioningModel;
+    private final String machineFamily;
+    private final String series;
+    private final String machineType;
+    private final String gpuType;
+    private final String numberOfGPUs;
+    private final String localSSD;
+    private final String datacenterLocation;
+    private final String committedUsage;
 
-    public ComputeEngineFormData(String numberOfInstances, String whatAreTheseInstancesFor,
-                                 String operatingSystem, String provisioningModel, String machineFamily,
-                                 String series, String machineType, String GPUType, String numberOfGPUs,
-                                 String localSSD, String datacenterLocation, String committedUsage) {
-        this.numberOfInstances = numberOfInstances;
-        this.whatAreTheseInstancesFor = whatAreTheseInstancesFor;
-        this.operatingSystem = operatingSystem;
-        this.provisioningModel = provisioningModel;
-        this.machineFamily = machineFamily;
-        this.series = series;
-        this.machineType = machineType;
-        this.GPUType = GPUType;
-        this.numberOfGPUs = numberOfGPUs;
-        this.localSSD = localSSD;
-        this.datacenterLocation = datacenterLocation;
-        this.committedUsage = committedUsage;
+    public ComputeEngineFormData(Builder builder) {
+        this.numberOfInstances = builder.numberOfInstances;
+        this.whatAreTheseInstancesFor = builder.whatAreTheseInstancesFor;
+        this.operatingSystem = builder.operatingSystem;
+        this.provisioningModel = builder.provisioningModel;
+        this.machineFamily = builder.machineFamily;
+        this.series = builder.series;
+        this.machineType = builder.machineType;
+        this.gpuType = builder.gpuType;
+        this.numberOfGPUs = builder.numberOfGPUs;
+        this.localSSD = builder.localSSD;
+        this.datacenterLocation = builder.datacenterLocation;
+        this.committedUsage = builder.committedUsage;
     }
 
     public String getNumberOfInstances() {
         return numberOfInstances;
     }
 
-    public void setNumberOfInstances(String numberOfInstances) {
-        this.numberOfInstances = numberOfInstances;
-    }
-
     public String getWhatAreTheseInstancesFor() {
         return whatAreTheseInstancesFor;
-    }
-
-    public void setWhatAreTheseInstancesFor(String whatAreTheseInstancesFor) {
-        this.whatAreTheseInstancesFor = whatAreTheseInstancesFor;
     }
 
     public String getOperatingSystem() {
         return operatingSystem;
     }
 
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
-    }
-
     public String getProvisioningModel() {
         return provisioningModel;
-    }
-
-    public void setProvisioningModel(String provisioningModel) {
-        this.provisioningModel = provisioningModel;
     }
 
     public String getMachineFamily() {
         return machineFamily;
     }
 
-    public void setMachineFamily(String machineFamily) {
-        this.machineFamily = machineFamily;
-    }
-
     public String getSeries() {
         return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
     }
 
     public String getMachineType() {
         return machineType;
     }
 
-    public void setMachineType(String machineType) {
-        this.machineType = machineType;
-    }
-
     public String getGPUType() {
-        return GPUType;
-    }
-
-    public void setGPUType(String GPUType) {
-        this.GPUType = GPUType;
+        return gpuType;
     }
 
     public String getNumberOfGPUs() {
         return numberOfGPUs;
     }
 
-    public void setNumberOfGPUs(String numberOfGPUs) {
-        this.numberOfGPUs = numberOfGPUs;
-    }
-
     public String getLocalSSD() {
         return localSSD;
-    }
-
-    public void setLocalSSD(String localSSD) {
-        this.localSSD = localSSD;
     }
 
     public String getDatacenterLocation() {
         return datacenterLocation;
     }
 
-    public void setDatacenterLocation(String datacenterLocation) {
-        this.datacenterLocation = datacenterLocation;
-    }
-
     public String getCommittedUsage() {
         return committedUsage;
     }
 
-    public void setCommittedUsage(String committedUsage) {
-        this.committedUsage = committedUsage;
+    public static class Builder {
+        private String numberOfInstances;
+        private String whatAreTheseInstancesFor;
+        private String operatingSystem;
+        private String provisioningModel;
+        private String machineFamily;
+        private String series;
+        private String machineType;
+        private String gpuType;
+        private String numberOfGPUs;
+        private String localSSD;
+        private String datacenterLocation;
+        private String committedUsage;
+
+        public Builder numberOfInstances(String numberOfInstances) {
+            this.numberOfInstances = numberOfInstances;
+            return this;
+        }
+
+        public Builder whatAreTheseInstancesFor(String whatAreTheseInstancesFor) {
+            this.whatAreTheseInstancesFor = whatAreTheseInstancesFor;
+            return this;
+        }
+
+        public Builder operatingSystem(String operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            return this;
+        }
+
+        public Builder provisioningModel(String provisioningModel) {
+            this.provisioningModel = provisioningModel;
+            return this;
+        }
+
+        public Builder machineFamily(String machineFamily) {
+            this.machineFamily = machineFamily;
+            return this;
+        }
+
+        public Builder series(String series) {
+            this.series = series;
+            return this;
+        }
+
+        public Builder machineType(String machineType) {
+            this.machineType = machineType;
+            return this;
+        }
+
+        public Builder gpuType(String gpuType) {
+            this.gpuType = gpuType;
+            return this;
+        }
+
+        public Builder numberOfGPUs(String numberOfGPUs) {
+            this.numberOfGPUs = numberOfGPUs;
+            return this;
+        }
+
+        public Builder localSSD(String localSSD) {
+            this.localSSD = localSSD;
+            return this;
+        }
+
+        public Builder datacenterLocation(String datacenterLocation) {
+            this.datacenterLocation = datacenterLocation;
+            return this;
+        }
+
+        public Builder committedUsage(String committedUsage) {
+            this.committedUsage = committedUsage;
+            return this;
+        }
+
+        public ComputeEngineFormData build() {
+            return new ComputeEngineFormData(this);
+        }
     }
 
     @Override
@@ -141,7 +169,7 @@ public class ComputeEngineFormData {
                 "> machineFamily = '" + machineFamily + "'\n" +
                 "> series = '" + series + "'\n" +
                 "> machineType = '" + machineType + "'\n" +
-                "> GPUType = '" + GPUType + "'\n" +
+                "> GPUType = '" + gpuType + "'\n" +
                 "> numberOfGPUs = '" + numberOfGPUs + "'\n" +
                 "> localSSD = '" + localSSD + "'\n" +
                 "> datacenterLocation = '" + datacenterLocation + "'\n" +
@@ -160,7 +188,7 @@ public class ComputeEngineFormData {
                 Objects.equals(machineFamily, computeEngineFormData.machineFamily) &&
                 Objects.equals(series, computeEngineFormData.series) &&
                 Objects.equals(machineType, computeEngineFormData.machineType) &&
-                Objects.equals(GPUType, computeEngineFormData.GPUType) &&
+                Objects.equals(gpuType, computeEngineFormData.gpuType) &&
                 Objects.equals(numberOfGPUs, computeEngineFormData.numberOfGPUs) &&
                 Objects.equals(localSSD, computeEngineFormData.localSSD) &&
                 Objects.equals(datacenterLocation, computeEngineFormData.datacenterLocation) &&
@@ -171,7 +199,7 @@ public class ComputeEngineFormData {
     public int hashCode() {
         return Objects.hash(numberOfInstances, whatAreTheseInstancesFor,
                 operatingSystem, provisioningModel, machineFamily,
-                series, machineType, GPUType, numberOfGPUs,
+                series, machineType, gpuType, numberOfGPUs,
                 localSSD, datacenterLocation, committedUsage);
     }
 

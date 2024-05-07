@@ -4,18 +4,27 @@ import java.util.Objects;
 
 public class EmailEstimateFormData {
 
-    private String email;
+    private final String email;
 
-    public EmailEstimateFormData(String email) {
-        this.email = email;
+    public EmailEstimateFormData(Builder builder) {
+        this.email = builder.email;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static class Builder {
+        private String email;
+
+        public Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public EmailEstimateFormData build() {
+            return new EmailEstimateFormData(this);
+        }
     }
 
     @Override

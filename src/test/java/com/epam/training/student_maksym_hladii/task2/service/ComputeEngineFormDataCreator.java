@@ -18,20 +18,20 @@ public class ComputeEngineFormDataCreator {
     public static final String COMMITTED_USAGE = "testdata.committed.usage";
 
     public static ComputeEngineFormData createComputeEngineFormData() {
-        return new ComputeEngineFormData(
-                TestDataReader.getTestData(NUMBER_OF_INSTANCES),
-                TestDataReader.getTestData(WHAT_ARE_THESE_INSTANCES_FOR),
-                TestDataReader.getTestData(OPERATING_SYSTEM),
-                TestDataReader.getTestData(PROVISIONING_MODEL),
-                TestDataReader.getTestData(MACHINE_FAMILY),
-                TestDataReader.getTestData(SERIES),
-                TestDataReader.getTestData(MACHINE_TYPE),
-                TestDataReader.getTestData(GPU_TYPE),
-                TestDataReader.getTestData(NUMBER_OF_GPUs),
-                TestDataReader.getTestData(LOCAL_SSD),
-                TestDataReader.getTestData(DATACENTER_LOCATION),
-                TestDataReader.getTestData(COMMITTED_USAGE)
-        );
+        return new ComputeEngineFormData.Builder()
+                .numberOfInstances(TestDataReader.getTestData(NUMBER_OF_INSTANCES))
+                .whatAreTheseInstancesFor(TestDataReader.getTestData(WHAT_ARE_THESE_INSTANCES_FOR))
+                .operatingSystem(TestDataReader.getTestData(OPERATING_SYSTEM))
+                .provisioningModel(TestDataReader.getTestData(PROVISIONING_MODEL))
+                .machineFamily(TestDataReader.getTestData(MACHINE_FAMILY))
+                .series(TestDataReader.getTestData(SERIES))
+                .machineType(TestDataReader.getTestData(MACHINE_TYPE))
+                .gpuType(TestDataReader.getTestData(GPU_TYPE))
+                .numberOfGPUs(TestDataReader.getTestData(NUMBER_OF_GPUs))
+                .localSSD(TestDataReader.getTestData(LOCAL_SSD))
+                .datacenterLocation(TestDataReader.getTestData(DATACENTER_LOCATION))
+                .committedUsage(TestDataReader.getTestData(COMMITTED_USAGE))
+                .build();
     }
 
 }

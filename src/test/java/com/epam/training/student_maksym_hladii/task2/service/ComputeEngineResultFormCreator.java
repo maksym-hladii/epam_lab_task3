@@ -9,14 +9,15 @@ public class ComputeEngineResultFormCreator {
 
     public static ComputeEngineResultForm createComputeEngineResultForm(List<String> resultFormElements,
                                                                         String totalEstimatedCost) {
-        return new ComputeEngineResultForm(
-                StringUtils.findElementInList(resultFormElements, "Region"),
-                StringUtils.findElementInList(resultFormElements, "Commitment term"),
-                StringUtils.findElementInList(resultFormElements, "Provisioning model"),
-                StringUtils.findElementInList(resultFormElements, "Instance type"),
-                StringUtils.findElementInList(resultFormElements, "Operating System"),
-                StringUtils.findElementInList(resultFormElements, "Local SSD"),
-                totalEstimatedCost);
+        return new ComputeEngineResultForm.Builder()
+                .region(StringUtils.findElementInList(resultFormElements, "Region"))
+                .commitmentTerm(StringUtils.findElementInList(resultFormElements, "Commitment term"))
+                .provisioningModel(StringUtils.findElementInList(resultFormElements, "Provisioning model"))
+                .instanceType(StringUtils.findElementInList(resultFormElements, "Instance type"))
+                .operatingSystem(StringUtils.findElementInList(resultFormElements, "Operating System"))
+                .localSSD(StringUtils.findElementInList(resultFormElements, "Local SSD"))
+                .totalEstimatedCost(totalEstimatedCost)
+                .build();
     }
 
 }

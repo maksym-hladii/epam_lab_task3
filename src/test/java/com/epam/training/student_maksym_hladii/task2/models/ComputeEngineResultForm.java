@@ -4,79 +4,99 @@ import java.util.Objects;
 
 public class ComputeEngineResultForm {
 
-    private String region;
-    private String commitmentTerm;
-    private String provisioningModel;
-    private String instanceType;
-    private String operatingSystem;
-    private String localSSD;
-    private String totalEstimatedCost;
+    private final String region;
+    private final String commitmentTerm;
+    private final String provisioningModel;
+    private final String instanceType;
+    private final String operatingSystem;
+    private final String localSSD;
+    private final String totalEstimatedCost;
 
-    public ComputeEngineResultForm(String region, String commitmentTerm, String provisioningModel, String instanceType,
-                                   String operatingSystem, String localSSD, String totalEstimatedCost) {
-        this.region = region;
-        this.commitmentTerm = commitmentTerm;
-        this.provisioningModel = provisioningModel;
-        this.instanceType = instanceType;
-        this.operatingSystem = operatingSystem;
-        this.localSSD = localSSD;
-        this.totalEstimatedCost = totalEstimatedCost;
+    public ComputeEngineResultForm(Builder builder) {
+        this.region = builder.region;
+        this.commitmentTerm = builder.commitmentTerm;
+        this.provisioningModel = builder.provisioningModel;
+        this.instanceType = builder.instanceType;
+        this.operatingSystem = builder.operatingSystem;
+        this.localSSD = builder.localSSD;
+        this.totalEstimatedCost = builder.totalEstimatedCost;
     }
 
     public String getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public String getCommitmentTerm() {
         return commitmentTerm;
-    }
-
-    public void setCommitmentTerm(String commitmentTerm) {
-        this.commitmentTerm = commitmentTerm;
     }
 
     public String getProvisioningModel() {
         return provisioningModel;
     }
 
-    public void setProvisioningModel(String provisioningModel) {
-        this.provisioningModel = provisioningModel;
-    }
-
     public String getInstanceType() {
         return instanceType;
-    }
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
     }
 
     public String getOperatingSystem() {
         return operatingSystem;
     }
 
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
-    }
-
     public String getLocalSSD() {
         return localSSD;
-    }
-
-    public void setLocalSSD(String localSSD) {
-        this.localSSD = localSSD;
     }
 
     public String getTotalEstimatedCost() {
         return totalEstimatedCost;
     }
 
-    public void setTotalEstimatedCost(String totalEstimatedCost) {
-        this.totalEstimatedCost = totalEstimatedCost;
+    public static class Builder {
+        private String region;
+        private String commitmentTerm;
+        private String provisioningModel;
+        private String instanceType;
+        private String operatingSystem;
+        private String localSSD;
+        private String totalEstimatedCost;
+
+        public Builder region(String region) {
+            this.region = region;
+            return this;
+        }
+
+        public Builder commitmentTerm(String commitmentTerm) {
+            this.commitmentTerm = commitmentTerm;
+            return this;
+        }
+
+        public Builder provisioningModel(String provisioningModel) {
+            this.provisioningModel = provisioningModel;
+            return this;
+        }
+
+        public Builder instanceType(String instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        public Builder operatingSystem(String operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            return this;
+        }
+
+        public Builder localSSD(String localSSD) {
+            this.localSSD = localSSD;
+            return this;
+        }
+
+        public Builder totalEstimatedCost(String totalEstimatedCost) {
+            this.totalEstimatedCost = totalEstimatedCost;
+            return this;
+        }
+
+        public ComputeEngineResultForm build() {
+            return new ComputeEngineResultForm(this);
+        }
     }
 
     @Override

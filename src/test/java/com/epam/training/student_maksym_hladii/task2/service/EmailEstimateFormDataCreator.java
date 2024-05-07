@@ -5,7 +5,7 @@ import com.epam.training.student_maksym_hladii.task2.models.EmailEstimateFormDat
 public class EmailEstimateFormDataCreator {
 
     public static EmailEstimateFormData createEmailEstimateFormData(String email) {
-        return new EmailEstimateFormData(email);
+        return new EmailEstimateFormData.Builder().email(email).build();
     }
 
 }
